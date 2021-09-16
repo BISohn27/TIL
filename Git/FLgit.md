@@ -155,6 +155,7 @@
   - 한번 git repository와 연결이 되면 -u 없이 명령어를 치면 push가 가능
 - ***git clone {github repository url}*** 
   - git bash here 에서 git clone 주소를 복사해 넣으면 원격 레포가 만들어짐
+  - git clone url . 하면 현재 디렉토리에 local repo를 형성
 
 
 
