@@ -17,8 +17,8 @@
 ## Box
 
 - 사용자에게 보여지지 않지만 태그들을 나누기 위해 작성
-- header, nav, aside, main, footer로 나뉘고 각각의 영역에 세부 상자들을 만듬
-- main -> 여러개의 section -> 각 section안에 여러개의 article
+- **header, nav, aside, main, footer**로 나뉘고 각각의 영역에 세부 상자들을 만듬
+- **main** -> 여러개의 **section** -> 각 section안에 여러개의 **article**
 - **article** : 여러 개의 태그들을 그룹화하여 재사용 가능하게 모아 놓은 것 (내부에는 재사용되는 태그들로 구성되어 있음)
 - **div** : 묶어서 스타일링을 할 필요가 있을 때 함께 스타일링을 적용할 태그들을 같은 div에 넣음
 
