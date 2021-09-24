@@ -82,3 +82,16 @@
 
 
 - jsp 중간 중간 html 구문을 삽입이 가능하고, 삽입된 html 구문은 jsp 구문의 흐름에 따라 실행이 될 수도 있고, 실행이 되지 않을 수도 있다. (if 문을 위에서 사용했을 때 if 문 안에 포함된 html문은 조건이 맞을 경우에만 실행된다)
+
+-  jsp action 태그 중 useBean태그
+
+  **`<% UserInfo userinfo = (UserInfo)request.getAttribute("userinfo"); %>` **
+
+  를 jsp 취지에 맞게 태그 형식으로 작성한 것이
+
+  **`<jsp:useBean id="userinfo" class="dto.UserInfo" scope="request" />` **
+
+  - id : 참조변수
+  - class : 어떤 클래스의 bean을 사용하는지
+  - scope : 저장 범위
+

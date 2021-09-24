@@ -31,3 +31,31 @@
 
 ![Diagram to show the different parts of the mvc architecture.](https://developer.mozilla.org/en-US/docs/Glossary/MVC/model-view-controller-light-blue.png)
 
+
+
+---
+
+# MVC 수업
+
+## 올인원(All-In-One) 방식 (모델1 패턴)
+
+ - 웹브라우저의 요청 받은 서블릿/JSP이 아래의 3가지 역할을 분담없이 모두 처리하는 것
+   1. 요청 데이터 처리
+   2. 비즈니스 로직 및 데이터 처리
+   3. 결과 화면 생성
+
+
+
+## MVC 아키텍처 (모델2 패턴)
+
+- **Model**, **View**, **Controller** 로 역할을 나누고, 각각의 요소가 자기가 분담한 일만 처리하는 구조
+- **Model** 은 일반 자바 클래스로 만들어 DB에 연결하여 데이터를 가지고 오는 역할만 부여
+- **Controller** 는 보통 서블릿으로 처리 (주로 dispatcher 객체를 이용해서), 어떤 데이터를 가지고 올 것인지를 결정
+- **View** 는 JSP에서 처리, 가져온 데이터를 클라이언트 측 웹 브라우저에 보여주는 역할
+- 데이터 사용이 없는 경우, **Controller** 와 **View** 만 이용한다.
+- **Controller** 
+  - **Front Controller** : 웹 브라우저에서 요청된 정보에 맞는 데이터를 로드하기 위하여 **Page Controller**에 해당 데이터를 가져오도록 요청하고 가져온 데이터를 적절한 **View**에 넘겨 클라이언트 측 웹 브라우저가 표현할 수 있도록 하는 역할
+  - **Page Controller** : **Front Controller**에서 요청된 데이터를 **DAO**로 요청하고 **DAO**에서 넘겨진 데이터를 다시 **Front Controller**로 데이터를 넘겨주는 역할
+
+
+
