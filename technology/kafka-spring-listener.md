@@ -120,7 +120,7 @@ registerListenerContainer(endpoint, containerFactory)
 
 - SmartLifecycle 구현체로, 스프링 시작/중지 시점에 자동으로 컨테이너를 시작/종료
 
-### \*\*\*\*전체 리스너 생성 흐름 요약
+### 전체 리스너 생성 흐름 요약
 
 - 리스너 정의 생성
   - KafkaListenerAnnotationBeanPostProcessor
