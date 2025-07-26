@@ -74,7 +74,7 @@
    ![](https://images.ctfassets.net/gt6dp23g0g38/3tDRpjViBVqd1UdRr7vT26/4ba46426533ebd6414eed5d4d7e43413/Kafka_Internals_067.png)
    2-1. 컨슈머가 `JoinGroup` 요청을 구독할 토픽 정보와 함께 그룹 코디네이터 브로커로 전송  
    2-2. 그룹 코디네이터는 컨슈머 리더(일반적으로 처음 요청을 보낸 컨슈머)를 지정  
-   2-3. 응답 메세지에 컨슈머에 할당한 `memberId`를 응답. 컨슈머 리더에게는 컨슈머 그룹 멤버 목록과 구독 정보도 함께 응답
+   2-3. 응답 메세지에 컨슈머에 할당한 `memberId`를 응답. 컨슈머 리더에게는 컨슈머 그룹 멤버 목록과 구독 정보도 함께 응답  
    2-4. 컨슈머 리더는 응답 받은 컨슈머 멤버 목록과 구독 정보로 파티션 할당 전략을 사용해서 파티션 할당 시작
 3. 컨슈머에 파티션 할당
    ![](https://images.ctfassets.net/gt6dp23g0g38/5AcaJ8KtM5YmmI9Ueomz25/2fcac2290d58d784f1522a41d8d48df2/Kafka_Internals_068.png)

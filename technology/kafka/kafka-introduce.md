@@ -60,7 +60,7 @@
 > - Performs linear writes at about 600 MBps.
 > - Performs random writes at about 100 Kbps, over 6000 times slower than linear writes
 
-- OS는 디스크 탐색(랜덤 접근)과 순차 처리 성능 간 차이를 극복하기 위해 메인 메로리를 디스크 캐싱을 위해 적극적으로 사용
+- OS는 디스크 탐색(랜덤 접근)과 순차 처리 성능 간 차이를 극복하기 위해 메인 메모리를 디스크 캐싱을 위해 적극적으로 사용
 
 > All disk reads and writes will go through this unified cache. This feature is hard to turn off without using direct I/O, so even if a process maintains an in-process cache of the data, this data will likely be duplicated in the OS’s page cache, effectively storing everything twice.
 
