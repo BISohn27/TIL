@@ -109,6 +109,56 @@
 - 셀렉터를 이용한 채널 선택
 
   - `select()`: 채널에서 등록된 이벤트가 준비될 때까지 블록
+  
   - `select(long timeout)`: timeout까지만 블록
+  
   - `selectNow()`: select와 달리 준비된 채널이 없어도 블록되지 않음
+  
   - `selectedKeys()`: 이벤트가 준비된 채널 집합을 받음
+  
+    1. `Set<SelectionKey> selectedKeys = selector.selectedKeys();`
+  
+    2. 이벤트가 준비된 채널을 담은 키를 반복하며, 이벤트 처리
+  
+       ```java
+       Set<SelectionKey> selectedKeys = selector.selectedKeys();
+        
+       Iterator<SelectionKey> keyIterator = selectedKeys.iterator();
+        
+       while(keyIterator.hasNext()) {
+            
+           SelectionKey key = keyIterator.next();
+        
+           if(key.isAcceptable()) {
+               // a connection was accepted by a ServerSocketChannel.
+           } else if (key.isConnectable()) {
+               // a connection was established with a remote server.
+           } else if (key.isReadable()) {
+               // a channel is ready for reading
+           } else if (key.isWritable()) {
+               // a channel is ready for writing
+           }
+        
+           keyIterator.remove();
+       }
+       ```
+
+
+
+### ServerSocketChannel
+
+- OS의 TCP 포트에 바인딩 되어 클라이언트 연결을 리스닝
+- 클라이언트 요청이 들어오면 `accept()`에서 실제 클라이언트와 TCP 연결된 **SocketChannel**을 반환
+- 직접 클라이언트로부터 데이터 수신하거나 클라이언트에 데이터를 송신 안함
+- 블록킹 모드와 논블록킹 모드 존재
+  - 논블록킹 모드에서는 실제 연결과 관계 없이 **SocketChannel**이 반환되고, 만약 연결이 되지 않으면 **null** 반환
+
+
+
+### SocketChannel
+
+- 실제 클라이언트와 TCP 연결된 채널
+- 실제로 클라이언트와 데이터를 주고 받는 주체
+- 블록킹과 논블록킹 모드 존재
+  - 논블록킹 모드일 경우 `connect()` 메서드를 호출 시 실제 연결이 완료되기 전 반환되어 연결 확인 필요
+  - `read()`의 경우에도 논블록킹 모드에서는 데이터를 읽지 않고 반환 가능하므로, 반환값(읽은 데이터의 바이트 수) 확인 필요
