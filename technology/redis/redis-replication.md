@@ -35,6 +35,8 @@
 
 ## 복제 구조 구성
 
+![1.png](https://image.toast.com/aaaadh/real/2020/techblog/1%2811%29.png)
+
 ```cmd
 REPLICAOF <master-ip> <master-port>
 ```
